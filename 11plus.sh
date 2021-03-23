@@ -169,20 +169,20 @@ setup_rclone(){
 
 setup_emby(){
 
-        emby_version=`curl -s https://github.com/MediaBrowser/Emby.Releases/releases/ | grep -Eo "tag/[0-9.]+\">([0-9.]+.*)" | grep -v "beta"|grep -Eo "[0-9.]+"|head -n1`
-        centos_packet_file="emby-server-rpm_${emby_version}_x86_64.rpm"
+        emby_version='4.5.4.0'
+        centos_packet_file="emby-server-rpm_4.5.4.0_x86_64.rpm"
         debian_packet_file="emby-server-deb_${emby_version}_amd64.deb"
 	armdebian64_packet_file="emby-server-deb_${emby_version}_arm64.deb"
         url="https://github.com/MediaBrowser/Emby.Releases/releases/download"
         debian_url="${url}/${emby_version}/${debian_packet_file}"
         armdebian64_url="${url}/${emby_version}/${armdebian64_packet_file}"
-        centos_url="${url}/${emby_version}/${centos_packet_file}"
+        centos_url="${url}/4.5.4.0/${centos_packet_file}"
 
         check_emby_local_version
 
         if [ -n "${emby_local_version}" ]; then
 
-                if [ "${emby_local_version}" = "${emby_version}" ];then
+                if [ "0" = "1" ];then
                         sleep 1s
                         echo
                         echo -e "`curr_date` 本系统已安装最新版，无需操作。"
