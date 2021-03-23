@@ -176,7 +176,7 @@ setup_emby(){
         url="https://github.com/MediaBrowser/Emby.Releases/releases/download"
         debian_url="${url}/${emby_version}/${debian_packet_file}"
         armdebian64_url="${url}/${emby_version}/${armdebian64_packet_file}"
-        centos_url="${url}/4.5.4.0/${centos_packet_file}"
+        centos_url="https://github.com/MediaBrowser/Emby.Releases/releases/download/4.5.4.0/emby-server-rpm_4.5.4.0_x86_64.rpm"
 
         check_emby_local_version
 
